@@ -11,6 +11,34 @@
 <body>
     <%- include('../partials/header.ejs'); %>
 
-    
+    <form action="/login/" class="input-form" method="post">
+        <div class="input-container">
+            <h1 class="input-title"><%= pageTitle %> here</h1>
+
+            <div class="input-rows">
+                <div class="username-row">
+                    <label class="username-label" for="Username">Username:</label>
+                    <div>
+                        <input required class="username-input" name="username" id="Title" />
+                    </div>
+                </div>
+
+                <div class="password-row">
+                    <label class="password-label" for="Password">Password:</label>
+                    <div>
+                        <input
+                            required
+                            class="password-input"
+                            name="password"
+                            id="password"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-row">
+                <input type="submit" value="Login" class="login-btn button" />
+            </div>
+        </div>
+    </form>
 </body>
 </html>

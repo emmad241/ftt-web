@@ -1,0 +1,21 @@
+html,
+body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background: url("../images/stocks.jpg");
+	background-size: 100vw;
+	float: left;
+	height: 100vw;
+	width: 100vw;
+}
+
+.header{
+    height:3rem;
+    width: 100%;
+    background-color:black;
+    opacity:0.5;
+}

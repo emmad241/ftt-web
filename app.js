@@ -8,6 +8,7 @@ const User = require('./config');
 var indexRouter = require("./routes/home");
 var loginRouter = require("./routes/login");
 var regRouter = require("./routes/registration");
+var clientsRouter = require("./routes/clients");
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/login", loginRouter);
 app.use("/reg", regRouter);
+app.use("/clients", clientsRouter);
 
 function googleLogin(){
     const providor = new firebase.auth.GoogleAuthProvider();

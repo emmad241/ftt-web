@@ -12,4 +12,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const Users = db.collection("Users");
-module.exports = Users;
+const Clients = db.collection("Clients");
+module.exports = {
+  Users: Users, 
+  Clients: Clients
+};

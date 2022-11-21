@@ -1,0 +1,122 @@
+* {
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+	box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: url("../images/stocks-dark.png");
+	background-size: 100vw;
+	height: 100%;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1{
+	color:white;
+}
+
+#client-heading{
+    margin-top:2rem;
+}
+
+.client-table {
+	width: 100%;
+    height:70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	height: 3rem;
+	width: 100%;
+	background-color: black;
+	opacity: 0.5;
+}
+
+.client-section {
+	padding: 2rem 2rem;
+    margin-top:1rem;
+	border-radius: 1rem;
+	width: 35%;
+    height:80%;
+	display: flex;
+    flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	transition-duration: 0.3s;
+	color: white;
+	background: black;
+}
+
+.client-row{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+}
+
+.client-username,
+.client-name,
+.client-number,
+.client-stocks,
+.client-crypto {
+    width:200px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+	white-space: initial;
+	text-decoration: none;
+	color: inherit;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.stock{
+    width:4rem;
+    padding:0.5rem;
+    margin-bottom:0.1rem;
+    text-align:center;
+    background:#592599c0;
+    border-radius: 4px;
+}
+
+.crypto{
+    width:4rem;
+    padding:0.5rem;
+    margin-bottom:0.1rem;
+    text-align:center;
+    background:#592599c0;
+    border-radius: 4px;
+}
+
+.button{
+    width:12rem;
+    padding:0.5rem;
+    text-align:center;
+    background:#592599c0;
+    border-radius: 4px; 
+}
+
+.stock:hover,.crypto:hover,.button:hover{
+    background:#5925996d;
+    cursor: pointer;
+}

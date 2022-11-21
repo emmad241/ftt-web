@@ -4,11 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link href="/stylesheets/client.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title><%= pageTitle %></title>
 </head>
-<body>
+<body class="loggedin-body">
     <%- include('../partials/header_loggedin.ejs'); %>
+    <div class="client-table">
+        <h1 id="client-heading"><%= broker_client.name %></h1>
+            <div class="client-section">
+                <div class="client-row">
+                    <div class="client-username">
+                        <p class="bold">Username:</p>
+                        <%= broker_client.username %>
+                    </div>
+                    <div class="client-name">
+                        <p class="bold">Name:</p>
+                        <%= broker_client.name %>
+                    </div>
+                </div>
+                <div class="client-row">
+                    <div class="client-stocks">
+                        <p class="bold">Selected stocks:</p>
+                        <% broker_client.stocks.forEach(stock => { %>
+                            <div class="stock">
+                                <%= stock %>
+                            </div>
+                        <% }); %>
+                    </div>
+                    <div class="client-crypto">
+                        <p class="bold">Selected crypto:</p>
+                        <% broker_client.crypto.forEach(crypto => { %>
+                            <div class="crypto">
+                                <%= crypto %>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+                <div class="client-row">
+                    <a>
+                        <div class="button">
+                            View projections
+                        </div>
+                    </a>
+                    <a>
+                        <div class="button">
+                            Run report
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </a>
+    </div>
 </body>
 </html>

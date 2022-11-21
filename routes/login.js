@@ -23,34 +23,17 @@ router.post("/", async (req, res) => {
 	}
 	if (match) {
 		res.cookie(`username`, username, {
-			maxAge: 5000,
+			maxAge: 50000*50000,
 			secure: false,
 			httpOnly: true,
 			sameSite: "lax",
 		});
 		console.log("Username cookie has been saved successfully");
 
-		getClients(username).then(function(clients){
-            res.render("../views/pages/home_loggedin", {
-                clients: clients,
-                pageTitle: "Investify",
-            });
-        });
+		res.redirect("/loggedin");
 	} else {
 		res.render("../views/pages/login", { pageTitle: "Login" });
 	}
 });
-
-async function getClients(username) {
-    let clients = [];
-    const snapshot = await Client.get();
-	const list = snapshot.docs.map((doc) => doc.data());
-    for (const row of list) {
-		if(row.broker == username){
-            clients.push(row);
-        }
-	}
-	return clients;
-}
 
 module.exports = router;

@@ -33,6 +33,10 @@ a:active {
 	color: inherit;
 }
 
+h1{
+	color:white;
+}
+
 .header {
 	height: 3rem;
 	width: 100%;
@@ -147,7 +151,7 @@ a:active {
 .headings-row {
 	padding: 3rem 2rem 1rem 2rem;
 	border-radius: 1rem;
-	width: 60%;
+	width: 20%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -159,7 +163,7 @@ a:active {
 	padding: 2rem 2rem;
     margin-top:1rem;
 	border-radius: 1rem;
-	width: 70%;
+	width: 30%;
     height:10rem;
 	display: flex;
 	justify-content: space-between;

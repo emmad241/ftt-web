@@ -14,18 +14,12 @@
         <div class="headings-row">
             <p>Username</p>
             <p>Name</p>
-            <p>Number</p>
-            <p>Stocks</p>
-            <p>Crypto</p>
         </div>
         <% clients.forEach(client => { %>
-        <a class="clients-data" href="">
+        <a class="clients-data" href="/clients/<%= client.id %>">
             <div class="clients-row">
                 <div class="client-username"><%= client.username %></div>
                 <div class="client-name"><%= client.name %></div>
-                <div class="client-number"><%= client.number %></div>
-                <div class="client-stocks"><%= client.stocks %></div>
-                <div class="client-crypto"><%= client.crypto %></div>
             </div>
         </a>
         <% }); %>

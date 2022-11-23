@@ -23,6 +23,10 @@ router.get('/loggedin', (req, res) => {
     });
 });
 
+router.get('/profile', async (req, res) => {
+    res.render('../views/pages/profile', { pageTitle: "Investify" });
+});
+
 async function getClients(username) {
     let clients = [];
     const snapshot = await Client.get();

@@ -1,0 +1,73 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
+         "responses": ["I can list out top 5 stocks this week, and give you some information about each stock"],
+         "context": [""]
+        },
+        {"tag": "top_stocks",
+         "patterns": ["What's top 5 stock for this week", "top 5", "top stocks", "best stocks", "most valuable stocks "],
+         "responses": ["Occidental Petroleum(OXY)\nPure Storage(PSTG)\nLivent(LTHM)\nTexas Roadhouse(TXRH)\nShift4 Payment(FOUR)" ],
+         "context": [""]
+        },
+        {"tag": "oxy_info",
+         "patterns": ["oxy", "information about oxy", "Occidental Petroleum", "Show me information of oxy","OXY", "Why oxy is one of top stock this week?", "What makes oxy top 5 this week? "],
+         "responses": ["The Warren Buffett stock is in a buy zone after previously crossing the 72.14 buy point from a cup-with-handle base, according to MarketSmith analyis.\nThe stock is up more than 138% so far this year, far outperforming the broader stock market.\nAnalysts predict Occidental will report a profit of $10.24 per share in 2022, up more than 300% from last year. Sales are expected to jump 43% to $37.3 billion over the same period."],
+         "context": [""]
+        },
+        {"tag": "pstg_info",
+         "patterns": ["pstg", "PSTG", "information about pstg", "Pure Storage", "Show me infomation of pstg", "Why pstg is one of top stock this week? ", "What makes pstg top 5 this week?" ],
+         "responses": ["PSTG stock is also one of the best stocks to buy or watch now. It has just cleared a consolidation pattern buy point of 31.62.\nThe base, which started on Aug. 18, is within a much-larger consolidation. Excellent all-around performance is reflected in its IBD Composite Rating of 93 out of 99.\nEarnings are its biggest strength, with the stock holding a rare perfect EPS Rating. Its revenue jumped 30% from the year-earlier period to $646.8 million.\nSubscription services revenue grew 35% to $232.2 million. And it posted adjusted earnings of 32 cents a share, up 128%. "],
+         "context": [""]
+        },
+        {"tag": "lthm_info",
+         "patterns": ["lthm", "LTHM", "information about lthm", "Livent","Show me information of lthm", "Why lthm is one of top stock this week?", "What makes lthm top 5 this week?"],
+         "responses": ["Livent stock is holding right at its 10-week and 50-day moving averages. A solid jump above its 50-day line could offer an early entry point for aggressive investors.\nThe potential buy point here is 36.48. Livent previously raised full-year revenue guidance to a range of $800 million to $860 million, up from $755 million to $835 million.\nThe spot price for lithium carbonate in China rose to nearly $78,000 per ton last week, an all time high and up about 130% on the year. "],
+         "context": [""]
+        },
+        {"tag": "txrh_info",
+         "patterns": ["txrh", "TXRH", "information about txrh", "Texas Roadhouse","Show me information of txrh", "Why txrh is one of top stock this week?", "What makes txrh top 5 this week?"],
+         "responses": ["Texas Roadhouse is trading in a buy zone after previously clearing a flat-base entry point of 95.52. It comes after it previously broke past an early trendline entry.\nTXRH stock undercut its buy point on Friday following earnings, but rebounded from its 21-day line to close down just 4 cents at 98.71.\nIt is now moving higher still. Overall powerful performance is reflected in an IBD Composite Rating of 93.\nThe stock has seen its price pop by over 13% over the past four weeks alone."],
+         "context": [""]
+        },
+        {"tag": "four_info",
+         "patterns": ["four", "FOUR", "information about four", "Shift4 Payment","Show me information of four", "Why four is one of top stock this week?", "What makes four top 5 this week?"],
+         "responses": ["Payments stock FOUR built a bottoming base that goes as deep as 14% below its entry point. It is offering a buy point at 51.52.\nIn addition, investors should watch for a strong move above its 50-day or 200-day moving averages.\nThe Oct. 20 high of 48.66 might offer a specific early entry. Improving technical performance has lifted its IBD Composite Rating to 75 out of 99.\nAlso, Shift4 acquired software maker VenueNext for $72 million in March 2021 as it targets sports stadiums. "],
+         "context": [""]
+        },
+        {"tag": "buy_stock",
+         "patterns": ["I want buy stock", "buy stock", "pay for a stock" ],
+         "responses": ["Please login or register in order to do that."],
+         "context": [""]
+        },
+        {"tag": "stock_status",
+         "patterns": ["Check my stocks", "Is any update of my stock", "My stocks", "Movement of stock"],
+         "responses": ["Please login or register in order to do that."],
+         "context": [""]
+        },
+        {"tag": "",
+         "patterns": [],
+         "responses": [""],
+         "context": [""]
+        }
+   ]
+}

@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const User = require("../config").Users;
+const Brokers = require("../config").Brokers;
 const Client = require("../config").Clients;
 
 /* GET login page. */
@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
 	const username = req.body.username;
 	const password = req.body.password;
 
-	const snapshot = await User.get();
+	const snapshot = await Brokers.get();
 	const list = snapshot.docs.map((doc) => doc.data());
 
 	var match = false;
@@ -34,6 +34,12 @@ router.post("/", async (req, res) => {
 	} else {
 		res.render("../views/pages/login", { pageTitle: "Login" });
 	}
+});
+
+router.get("/logout", async (req, res) => {
+	res.clearCookie('username');
+
+	res.redirect("/");
 });
 
 module.exports = router;

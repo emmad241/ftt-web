@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title><%= pageTitle %></title>
+</head>
+<body class="loggedin-body">
+    <%- include('../partials/header_loggedin.ejs'); %>
+    <div class="predictions-table">
+            <div class="predictions-section">
+                <h1>Report:</h1>
+                <hr/>
+                <h1>Stocks:</h1>
+                <div class="predictions-headings-row">
+                    <p>Code</p>
+                    <p>Current Price</p>
+                    <p>Price 6 months</p>
+                    <p>Price 12 months</p>
+                </div>
+                <% stocks.forEach(stock => { %>
+                    <div class="predictions-row">
+                        <div class="stock-name">
+                            <%= stock.assetCode %>
+                        </div>
+                        <div class="stock-price">
+                            <%= stock.assetPrice %>
+                        </div>
+                        <div class="stock-price-6">
+                            <%= stock.assetPriceSixMonths %>
+                        </div>
+                        <div class="stock-price-12">
+                            <%= stock.assetPriceTwelveMonths %>
+                        </div>
+                    </div>
+                <% }); %>
+                <hr/>
+                <h1>Crypto:</h1>
+                <div class="predictions-headings-row">
+                    <p>Code</p>
+                    <p>Current Price</p>
+                    <p>Price 6 months</p>
+                    <p>Price 12 months</p>
+                </div>
+                <% crypto.forEach(crypto => { %>
+                    <div class="predictions-row">
+                        <div class="stock-name">
+                            <%= crypto.assetCode %>
+                        </div>
+                        <div class="stock-price">
+                            <%= crypto.assetPrice %>
+                        </div>
+                        <div class="stock-price-6">
+                            <%= crypto.assetPriceSixMonths %>
+                        </div>
+                        <div class="stock-price-12">
+                            <%= crypto.assetPriceTwelveMonths %>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

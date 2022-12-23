@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale-1.8">
+        <title>Document</title>
+    </head>
+    <body>
+        Stock name <input id="text1" value="" type="text"><br>
+        Current price <input id="text2" value="" type="text"><br>
+        Further price <input id="text3" value="" type="text"><br>
+        <br>
+        <input type="button" value="save" onclick="save_txt()">
+    </body>
+
+    <script>
+        function save_txt(){
+            var name = document.getElementById("text1").value;
+            var cp = document.getElementById("text2").value;
+            var fp = document.getElementById("text3").value;
+            
+            var data = [];
+            data.push(name);
+            data.push(cp);
+            data.push(fp);
+
+            var data_string = JSON.stringify(data);
+
+            var file = new Blob([data_string], {type:"text"});
+
+            var anchor = document.createElement("a");
+            anchor.href = URL.createObjectURL(file);
+            anchor.download = "report.txt";
+            anchor.click();
+        }
+    </script>
+    </html>
+    

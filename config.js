@@ -9,11 +9,19 @@ const firebaseConfig = {
   appId: "1:740364239697:web:b743d9657f6725b124c970",
   measurementId: "G-YRJ3SMRXCM"
 };
-firebase.initializeApp(firebaseConfig);
+var app = firebase.initializeApp(firebaseConfig);
+
 const db = firebase.firestore();
 const Users = db.collection("Users");
-const Clients = db.collection("Clients");
+const Brokers = db.collection("Brokers");
+const Clients = db.collection("UsersNew");
+const Stocks = db.collection("StockList");
+const Crypto = db.collection("CryptoList");
 module.exports = {
   Users: Users, 
-  Clients: Clients
+  Brokers: Brokers,
+  Clients: Clients,
+  Stocks: Stocks,
+  Crypto: Crypto,
+  app: app
 };

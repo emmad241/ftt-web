@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../config');
+const Brokers = require("../config").Brokers;
 
 /* GET  page. */
 router.get('/', (req, res) => {
@@ -11,27 +12,24 @@ router.post("/", async (req, res) => {
 	const username = req.body.username;
 	const password = req.body.password;
 
-    const snapshot = await User.get();
-    const list = snapshot.docs.map((doc)=>doc.data());
-
-    var match = false;
-    for(const row of list) {
-        if(username == row.username && password == row.password){
-            match = true;
-        }
+    const data = {
+        username: username,
+        password: password
     };
-    if(match){
-        res.cookie(`username`,username,{
-            maxAge: 5000,
-            secure: false,
-            httpOnly: true,
-            sameSite: 'lax'
-        });
-        console.log('Username cookie has been saved successfully');
-        res.render('../views/pages/home_loggedin', { pageTitle: "Investify" });
-    }else{
-        res.render("../views/pages/login", { pageTitle: "Login" });
-    }
+
+    const id = Math.random().toString(36).substring(2,12);
+
+    await Brokers.doc(id).set(data)
+
+    res.cookie(`username`, username, {
+        maxAge: 50000*50000,
+        secure: false,
+        httpOnly: true,
+        sameSite: "lax",
+    });
+    console.log("Username cookie has been saved successfully");
+
+    res.redirect("/loggedin");
 });
 
 module.exports = router;

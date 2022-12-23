@@ -3,12 +3,14 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var Promise = require("promise");
-const User = require('./config');
+var fs = require("fs");
+const firebase = require('firebase-admin');
 
 var indexRouter = require("./routes/home");
 var loginRouter = require("./routes/login");
 var regRouter = require("./routes/registration");
 var clientsRouter = require("./routes/clients");
+var stockRouter = require("./routes/stock");
 
 var app = express();
 
@@ -25,18 +27,11 @@ app.use("/", indexRouter);
 app.use("/login", loginRouter);
 app.use("/reg", regRouter);
 app.use("/clients", clientsRouter);
+app.use("/stock", stockRouter);
 
-function googleLogin(){
-    const providor = new firebase.auth.GoogleAuthProvider();
-
-    firebase.auth().signInWithPopup(providor)
-        .then(result => {
-            const user = result.user;
-            document.write(`Hello ${user.displayName}`)
-            console.log(user)
-        })
-        .catch(console.log)
-}
+app.get("/google", async (req, res) => {
+	googleLogin();
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
